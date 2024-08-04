@@ -1,16 +1,29 @@
-/*
-1. Create a function named `sayHello` that alerts a message `Hello World!`.
-*/
+// /*
+// 1. Create a function named `sayHello` that alerts a message `Hello World!`.
+// */
+// function sayHello() {
+//   alert(`Hello World!`);
+// }
+// sayHello();
+// /*
+// 2. Create a function named `fullName` with the following steps:
 
-/*
-2. Create a function named `fullName` with the following steps:
+//   - Prompts a message saying `Enter your first name` and store the value into variable named `firstName`
+//   - Prompts a message saying `Enter your last name` and store the value into variable named `lastName`
+//   - Concat the value of fistName and lastName and store it in another variable named `fullName`.
+//   - Alert `fullName`
+// */
 
-  - Prompts a message saying `Enter your first name` and store the value into variable named `firstName`
-  - Prompts a message saying `Enter your last name` and store the value into variable named `lastName`
-  - Concat the value of fistName and lastName and store it in another variable named `fullName`.
-  - Alert `fullName`
-*/
+// function fullName() {
+//   let firstName = prompt(`Enter your first name: `);
+//   let lastName = prompt(`Enter your last Name: `);
 
+//   let fullName = firstName + " " + lastName;
+
+//   alert("FullName = " + fullName);
+// }
+
+// fullName();
 /*
 3. Create a function named `addTwoNumbers` with the following steps:
 
@@ -19,6 +32,16 @@
   - Add the value of firstNum and secondNum and store it in another variable named `sum`.
   - Alert `sum`
 */
+
+// function addTwoNumbers() {
+//   let firstNum = parseFloat(prompt("Enter the first number: "));
+//   let secondNum = parseFloat(prompt("Enter the second: "));
+//   let sum = firstNum + secondNum;
+
+//   alert("The sum = " + sum);
+// }
+
+// addTwoNumbers();
 
 /*
 4. Create a function named `getTable` with the following steps:
@@ -39,12 +62,47 @@
   9 * 10 = 90
 */
 
+// function getTable() {
+//   var num = parseFloat(prompt("Enter a number: "));
+
+//   if (!isNaN(num)) {
+//     for (var i = 1; i <= 10; i++) {
+//       console.log(` ${num} x  ${i} = ${num * i}`);
+//     }
+//   } else {
+//     console.log("Invalid input!");
+//   }
+// }
+// getTable();
+
 /*
 5. Create a function named `isLeapYear` with the following steps:
 
   - Prompts a message saying `Enter a year` and store the value into variable named`year`
   - Alert `[year] is a leap year` otherwise `[year] is not a leap year`
 */
+function isLeapYear() {
+  // Prompt the user to enter a year
+  let year = prompt("Enter a year");
+
+  // Convert the entered value to a number
+  year = Number(year);
+
+  // Check if the entered value is a valid number
+  if (!isNaN(year) && Number.isInteger(year)) {
+    // Determine if the year is a leap year
+    if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+      alert(`${year} is a leap year`);
+    } else {
+      alert(`${year} is not a leap year`);
+    }
+  } else {
+    alert("Invalid input. Please enter a valid year.");
+  }
+}
+
+// Call the function to execute
+isLeapYear();
 
 /*
 6. Create a function named `getFactorial` with the following steps:
@@ -53,3 +111,27 @@
   - Alert `The factorial of [number] is [factorial]`
 
 */
+
+function getFactorial() {
+  // Prompt the user to enter a number
+  let number = prompt("Enter a number");
+
+  // Convert the entered value to a number
+  number = Number(number);
+
+  // Check if the entered value is a valid number and a non-negative integer
+  if (!isNaN(number) && Number.isInteger(number) && number >= 0) {
+    // Calculate the factorial of the number
+    let factorial = 1;
+    for (let i = 1; i <= number; i++) {
+      factorial *= i;
+    }
+    // Alert the result
+    alert(`The factorial of ${number} is ${factorial}`);
+  } else {
+    alert("Invalid input. Please enter a non-negative integer.");
+  }
+}
+
+// Call the function to execute
+getFactorial();
