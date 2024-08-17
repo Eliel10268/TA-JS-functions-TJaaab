@@ -11,9 +11,15 @@ minToSec(2) ➞ 120
 */
 
 // - Write a Function Decleration for above problem
-function minToSec() {
-  // Your code
+function minToSec(minutes) {
+  return minutes * 60;
 }
+
+// Test the function with the required parameters
+console.log(minToSec(50)); // ➞ 3000
+console.log(minToSec(13)); // ➞ 780
+console.log(minToSec(2)); // ➞ 120
+
 // - Execute the function with required parameter
 
 /* 2. 
@@ -26,9 +32,14 @@ isInRange(1, 10, 19); // false
 */
 
 // - Write a Function Decleration for above problem
-function isInRange() {
-  // Your code
+function isInRange(lower, upper, n) {
+  return n > lower && n < upper;
 }
+
+// Test the function with the required parameters
+console.log(isInRange(1, 20, 9)); // ➞ true
+console.log(isInRange(1, 10, 19)); // ➞ false
+
 // - Execute the function with required parameter
 
 /* 2. calculateBMI
@@ -49,9 +60,25 @@ Obese: BMI is 30 or more
 
 */
 
-function calculateBMI() {
-  // Your code
+function calculateBMI(weight, height) {
+  const bmi = weight / (height * height);
+
+  if (bmi < 18.5) {
+    return "Underweight";
+  } else if (bmi >= 18.5 && bmi <= 24.9) {
+    return "Normal weight";
+  } else if (bmi >= 25 && bmi <= 29.9) {
+    return "Overweight";
+  } else {
+    return "Obese";
+  }
 }
+
+// Test the function with some sample data
+console.log(calculateBMI(50, 1.7)); // ➞ 'Underweight'
+console.log(calculateBMI(68, 1.75)); // ➞ 'Normal weight'
+console.log(calculateBMI(85, 1.75)); // ➞ 'Overweight'
+console.log(calculateBMI(95, 1.7)); // ➞ 'Obese'
 
 /* 3. appropiateDrinks
 
@@ -64,9 +91,23 @@ Create a function that take the age are return the appropiate drink based on the
 
 */
 
-function appropiateDrinks() {
-  // Your code
+function appropiateDrinks(age) {
+  if (age < 14) {
+    return "drink fruit juice";
+  } else if (age < 18) {
+    return "drink soda";
+  } else if (age < 21) {
+    return "drink fruit-flavored beer";
+  } else {
+    return "drink throat-piercing vodka";
+  }
 }
+
+// Test the function with some sample ages
+console.log(appropiateDrinks(10)); // ➞ "drink fruit juice"
+console.log(appropiateDrinks(16)); // ➞ "drink soda"
+console.log(appropiateDrinks(19)); // ➞ "drink fruit-flavored beer"
+console.log(appropiateDrinks(25)); // ➞ "drink throat-piercing vodka"
 
 /* 4. Add two numers or string
 
@@ -79,13 +120,19 @@ Twist is when user passes anything other than number, or string value you should
 
 */
 
-function sum() {
-  // Your code
+function sum(a, b) {
+  if (typeof a === "number" && typeof b === "number") {
+    return a + b;
+  } else if (typeof a === "string" && typeof b === "string") {
+    return a + " " + b;
+  } else {
+    return "Enter valid values";
+  }
 }
 
 // Function Test
-sum(2, 4); // 4
-sum('Arya', 'Stark'); // "Arya Stark"
-sum('Arya', 2); // Enter valid Values
-sum(null, 2); // Enter valid Values
-sum(undefined, 2); // Enter valid Values
+console.log(sum(2, 4)); // ➞ 6
+console.log(sum("Arya", "Stark")); // ➞ "Arya Stark"
+console.log(sum("Arya", 2)); // ➞ "Enter valid values"
+console.log(sum(null, 2)); // ➞ "Enter valid values"
+console.log(sum(undefined, 2)); // ➞ "Enter valid values"
